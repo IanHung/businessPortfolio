@@ -1,0 +1,28 @@
+{% extends "businessPortfolio/base.html" %}
+{% block title %}News{% endblock %}
+
+{% block navbarNews %}active{% endblock %}
+
+
+{% block content %}
+	{% if articles_list %}
+		{% for NewsArticle in articles_list %}
+				<div class="row">
+					<div class="span2">
+						<h5>{{ NewsArticle.pubdate|date }}</h5>
+					</div>
+					<div class="span5">
+						<h5>{{ NewsArticle.title }}</h5>
+						<p>
+							{{ NewsArticle.summary }} 
+							{% if NewsArticle.link %}
+							Read More  <a href={{ NewsArticles.link }}>here</a>.
+							{% endif %}
+						</p>
+					</div>
+				</div>	
+		{% endfor %}
+	{% else %}
+		<p>No articles</p>
+	{% endif %}
+{% endblock %}

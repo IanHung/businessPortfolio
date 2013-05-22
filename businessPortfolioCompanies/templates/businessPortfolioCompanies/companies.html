@@ -1,0 +1,29 @@
+{% extends "businessPortfolio/base.html" %}
+{% block title %}Companies{% endblock %}
+
+{% block navbarCompanies %}active{% endblock %}
+
+
+{% block content %}
+	{% if companies_list %}
+		{% for Company in companies_list %}
+				<div class="row">
+					<div class="span3">
+						<div class="thumbnail">
+							<img src={{ Company.img.url }} alt="" />
+						</div>
+					</div>
+					<div class="span5">
+						{% if Company.webaddress %}
+						<h4><a href={{ Company.webaddress }}>{{ Company.title }}</a></h4>
+						{% else %}
+						<h4>{{ Company.title }}</h4>
+						{% endif %}
+						<p>{{ Company.abstract }}</p>
+					</div>
+				</div>	
+		{% endfor %}
+	{% else %}
+		<p>No companies</p>
+	{% endif %}
+{% endblock %}

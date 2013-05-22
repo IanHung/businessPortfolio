@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% load staticfiles %}
+
+	<head>
+		<meta charset="utf-8">
+		<title>Orange Company :: {% block title %}{% endblock %}</title>
+		<meta name="viewport" content = "device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link rel = "stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}" />
+		
+		<link rel = "stylesheet" type="text/css" href="{% static 'businessPortfolio/css/custom.css' %}"/>
+		<script type="text/javascript"
+   			src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+   		<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+	    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<div class="container">
+					<h1><a class="muted" href={% url "home" %}>Orange Company</a></h1>
+				</div>
+				<div class="container">
+			
+		      		<div class="navbar">
+						<a class="brand">
+							<div class="motto">
+		        				Motto: Something until it sticks
+		        			</div>
+		        		</a>	        		
+		        		<ul class="nav nav-pills pull-right">
+		        			<li class="{% block navbarHome %}{% endblock %}"><a href={% url "home" %}>Home</a></li>
+	          				<li class="{% block navbarCompanies %}{% endblock %}"><a href={% url "companies-index" %}>Companies</a></li>
+	          				<li class="{% block navbarPeople %}{% endblock %}"><a href={% url "people-index" %}>People</a></li>
+	          				<li class="{% block navbarNews %}{% endblock %}"><a href={% url "news-index" %}>News</a></li>
+	          				<li class="{% block navbarContact %}{% endblock %}"><a href={% url "contact" %}>Contact</a></li>
+		        		</ul>
+	
+		      		</div>
+	      		</div>
+	      </div>
+		  <hr>		
+	    		<div class="container-narrow">
+		    		{% block content %}{% endblock %}
+			
+				</div>
+
+				<div class="footer-push"></div>
+		</div>		
+		<footer class="footer">
+			<hr>
+			<div class="container-narrow">	
+					<p>This is the end<br>
+						Beautiful friend<br>
+						This is the end<br>
+						My only friend, the end<br>
+						Of our elaborate plans, the end<br>
+						Of everything that stands, the end</p>
+			</div>
+		</footer>	
+  	</body>
+  	
+</html>

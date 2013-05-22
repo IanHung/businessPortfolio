@@ -1,0 +1,87 @@
+@CHARSET "ISO-8859-1";
+html, body {
+    height: 95%;
+    margin-top: 15px;   
+} 
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width:800px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+	  .motto {
+		margin-left: 50px;
+	  }
+
+a {
+	color: #000000;
+}	  
+
+
+/*@footer-height: 300px;  
+@footer-height-large: 250px;        //Larger width -> less height
+@footer-height-tablet: 350px;       //Smaller -> more height needed
+ */
+/* 
+//Sticky Footer (http://ryanfait.com/sticky-footer/)
+//--------------------------------------------------*/
+
+.wrapper {
+    min-height: 90%;
+    height: auto !important;
+    height: 90%;
+    margin: 0 auto -150px;
+} 
+footer, .footer-push { 
+    height: 150px;
+}  
+/* 
+// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+// --------------------------------------------------
+ */
+@media (max-width: 767px) {
+    .wrapper {
+        min-height: 0;
+        height: auto;
+        margin: 0 auto -150px;
+    } 
+ 
+    footer, .footer-push { 
+        height: 150px; 
+        margin: 0 -20px; 
+        .container{
+            padding: 0 20px;
+         }
+    }
+ 
+}
+ 
+/* 
+// PORTRAIT TABLET TO DEFAULT DESKTOP
+// ----------------------------------
+ */
+@media (min-width: 768px) and (max-width: 979px) {
+    .wrapper {
+        margin: 0 auto -150px;
+    } 
+    footer, .footer-push { 
+        height: 150px;
+    }  
+}
+ 
+/* 
+// LARGE DESKTOP & UP
+// ------------------
+ */
+@media (min-width: 1200px) {
+    .wrapper {
+        margin: 0 auto -150px;
+    } 
+    footer, .footer-push { 
+        height: 150px;
+    }
+}

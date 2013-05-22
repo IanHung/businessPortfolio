@@ -1,0 +1,33 @@
+{% extends "businessPortfolio/base.html" %}
+{% block title %}People{% endblock %}
+
+{% block navbarPeople %}active{% endblock %}
+
+
+{% block content %}
+	{% if people_list %}
+		{% for Person in people_list %}
+				<div class="row">
+					
+					<div class="span2">
+						{% if Person.img %}
+						<div class="thumbnail">
+							<img src={{ Person.img.url }} alt="" />
+						</div>
+						{% endif %}
+					</div>
+					
+					<div class="span5">
+						{% if Person.webaddress %}
+						<h4><a href={{ Person.webaddress }}>{{ Person.firstName }} {{ Person.lastName }}</a></h4>
+						{% else %}
+						<h4>{{ Person.firstName }} {{ Person.lastName }}</h4>
+						{% endif %}
+						<p>{{ Person.briefBio }}</p>
+					</div>
+				</div>	
+		{% endfor %}
+	{% else %}
+		<p>No People</p>
+	{% endif %}
+{% endblock %}
